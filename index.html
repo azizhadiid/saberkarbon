@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABER KARBON | Aplikasi Transisi Energi Industri</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Tailwind CSS (2026 standard utility-first approach) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                            950: '#022c22'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Modern 2026 Glassmorphism & Glow Effects */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: pulse 8s infinite alternate;
+        }
+
+        .glow-green {
+            background: #10b981;
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .glow-blue {
+            background: #3b82f6;
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+            50% { transform: scale(1.1) translate(50px, 20px); opacity: 0.5; }
+            100% { transform: scale(0.9) translate(-20px, 50px); opacity: 0.3; }
+        }
+
+        .btn-download {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-download::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        /* Abstract phone shape */
+        .mockup-frame {
+            width: 280px;
+            height: 580px;
+            border-radius: 40px;
+            border: 8px solid #1e293b;
+            background: linear-gradient(145deg, #0f172a, #020617);
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 0 0 2px rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        
+        .mockup-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 25px;
+            background: #1e293b;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 10;
+        }
+
+        /* Float animation for the phone */
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen relative flex flex-col bg-slate-950">
+    
+    <!-- Header with Logo & Text -->
+    <header class="absolute top-0 w-full p-6 z-50">
+        <div class="container mx-auto flex items-center justify-center lg:justify-start">
+            <img src="logo.png" alt="SABER KARBON Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+            <span class="ml-4 text-2xl font-black tracking-widest text-white drop-shadow-md">SABER<span class="text-brand-500">KARBON</span></span>
+        </div>
+    </header>
+
+    <!-- Background Ambient Glows (Fixed Container to prevent scroll overflow) -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="glow-orb glow-green"></div>
+        <div class="glow-orb glow-blue"></div>
+    </div>
+
+    <main class="container mx-auto px-6 py-12 lg:py-24 relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
+        
+        <!-- Left Content: Copywriting & CTA -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-brand-500 font-semibold text-sm mb-6 border-brand-500/30">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>Versi 1.0.0 Telah Rilis</span>
+            </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                SABER <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-300">KARBON</span>
+            </h1>
+            
+            <p class="text-slate-300 text-lg lg:text-xl mb-10 max-w-xl leading-relaxed">
+                Platform intelijen dekarbonisasi industri pertama di Indonesia. Pantau emisi, simulasikan pajak CBAM, hitung skor kesiapan IDRI, dan temukan vendor teknologi hijau dalam satu genggaman.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start">
+                <a href="saber.apk" download="SaberKarbon_v1.0.apk" class="btn-download flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                    <i data-lucide="download" class="w-6 h-6"></i>
+                    Unduh APK (Android)
+                </a>
+                <a href="#features" class="flex items-center justify-center gap-3 glass-panel hover:bg-slate-800 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-colors">
+                    Pelajari Fitur
+                </a>
+            </div>
+
+            <div class="mt-10 flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-400">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-500"></i>
+                    <span>Aman & Terverifikasi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="smartphone" class="w-5 h-5 text-brand-500"></i>
+                    <span>Android 8.0+</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content: Abstract Phone Mockup -->
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end perspective-1000 mt-12 lg:mt-0">
+            <div class="float-anim relative">
+                <!-- Decorative elements behind phone -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-brand-500/20 to-blue-500/20 blur-2xl rounded-full"></div>
+                
+                <div class="mockup-frame flex flex-col pt-2">
+                    <div class="mockup-notch"></div>
+                    <!-- Mockup Inner Screen (Carousel Slider) -->
+                    <div class="w-full h-full relative bg-slate-900 rounded-b-3xl" id="mockup-slider">
+                        <!-- Gambar 1: Dashboard -->
+                        <img src="SIINas Dashboard 1.jpg" alt="Dashboard SABER KARBON" class="w-full h-full object-cover object-top absolute top-0 left-0 transition-opacity duration-1000 opacity-100 rounded-[32px]">
+                        <!-- Gambar 2: CBAM Simulator -->
+                        <img src="CBAM Simulator 1.jpg" alt="CBAM Simulator" class="w-full h-full object-cover object-top absolute top-0 left-0 transition-opacity duration-1000 opacity-0 rounded-[32px]">
+                        <!-- Gambar 3: IDRI Calculator -->
+                        <img src="IDRI Page 1.jpg" alt="IDRI Calculator" class="w-full h-full object-cover object-top absolute top-0 left-0 transition-opacity duration-1000 opacity-0 rounded-[32px]">
+                    </div>
+                </div>
+                
+                <!-- Floating Badge -->
+                <div class="absolute -left-4 lg:-left-12 top-20 glass-panel p-4 rounded-2xl flex items-center gap-3 transform -rotate-6 shadow-xl">
+                    <div class="bg-brand-500/20 p-2 rounded-lg">
+                        <i data-lucide="leaf" class="w-6 h-6 text-brand-500"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400">Net Zero 2060</p>
+                        <p class="font-bold text-sm">Target Terlacak</p>
+                    </div>
+                </div>
+
+                <!-- Floating Badge 2 -->
+                <div class="absolute -right-4 lg:-right-8 bottom-32 glass-panel p-4 rounded-2xl flex items-center gap-3 transform rotate-6 shadow-xl">
+                    <div class="bg-blue-500/20 p-2 rounded-lg">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-blue-400"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400">Pajak CBAM</p>
+                        <p class="font-bold text-sm">Aman Terkendali</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="w-full relative z-20 text-center py-8 mt-12 text-slate-500 border-t border-white/5 bg-slate-900/50 backdrop-blur">
+        <div class="container mx-auto px-6">
+            <h3 class="text-lg font-bold text-slate-300 mb-2">SABER KARBON</h3>
+            <p class="text-sm mb-4">Aplikasi Simulasi & Taktik Reduksi Karbon untuk Industri Cerdas Masa Depan.</p>
+            <p class="text-xs">&copy; 2026 Dipersembahkan oleh Tim Inovasi untuk Statistics Infographic Competition (SIC) - Satria Data.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Carousel -->
+    <script>
+        lucide.createIcons();
+
+        // Logika Carousel untuk HP Mockup
+        const slides = document.querySelectorAll('#mockup-slider img');
+        if (slides.length > 0) {
+            let currentSlide = 0;
+            setInterval(() => {
+                // Sembunyikan slide saat ini
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0');
+                
+                // Geser ke slide berikutnya
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                // Tampilkan slide berikutnya
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }, 3000); // Ganti gambar setiap 3 detik
+        }
+    </script>
+</body>
+</html>
